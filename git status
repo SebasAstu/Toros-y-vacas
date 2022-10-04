@@ -1,0 +1,107 @@
+[33mcommit 418060bae2ace44c2dea68702234e7e4b1a4f088[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Sebastian <sebastian.asturizaga@ucb.edu.bo>
+Date:   Wed Aug 17 23:03:30 2022 -0400
+
+    commit con la operacion suma
+
+[33mcommit 88f27de6fdc14b481c44ab5825c872ad475dc8c0[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Thu Jun 23 09:13:19 2022 -0400
+
+    Para que github pages tome el root dir como base
+
+[33mcommit 522cf5f5d5e878dd3fee9c2da80f363ac156c54a[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Tue Apr 5 00:42:35 2022 -0400
+
+    Anadiendo github action para  workflow de pruebas
+
+[33mcommit 714394746c950c16ece0a8c843626bc8cfbb32c9[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Thu Feb 10 00:33:13 2022 -0400
+
+    Nombres en español
+
+[33mcommit d1711aef42f93fa6fd8ee10d7ff54193a2267517[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Thu Feb 10 00:24:34 2022 -0400
+
+    Nombres más consistentes con la app y la arquitectura
+
+[33mcommit 420034dcf8413a9ffd26460de91229d0edcb40a2[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Mon Jan 17 10:41:34 2022 -0400
+
+    Se elimina dependencia innecesaria de parcel1, para actualizar a parcel2
+
+[33mcommit afeceead557791f7083ec380a2bbe57ef6ddc7d5[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Mon Jan 17 10:17:55 2022 -0400
+
+    se ignora coverage para repo git
+
+[33mcommit ad836b4a6f1166bb4fb0f669fd8b64ff10f4cad1[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Mon Jan 17 10:14:52 2022 -0400
+
+    Se actualizan versiones de paquetes varios
+
+[33mcommit ebfef4f72470dd672414caa25626b7b4cdaba9f1[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Wed Sep 15 09:52:53 2021 -0400
+
+    Para que parcel build funcione adeacuadamente
+
+[33mcommit 1b64098e03ac369e3c1abfa2fccbe8379414edc5[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Wed Sep 15 09:36:46 2021 -0400
+
+    Para corregir error al deployar con Netlify
+
+[33mcommit dd7ee0cb7b3dc5eb4298da2c67aee7fded0906db[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Sat Sep 4 10:11:55 2021 -0400
+
+    Readme añadido
+
+[33mcommit e7f2c4f7229b8f1b3350f71d80fa1feca7fc4a7a[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Fri Sep 3 12:57:23 2021 -0400
+
+    Test de prueba
+
+[33mcommit 4fedbb364f00f8d4c6616dcd9b779f9d359ff264[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Fri Sep 3 12:57:01 2021 -0400
+
+    Se actualiza a <script type=module> para que se pueda usar import en index.js
+
+[33mcommit 7788fe6e6a379ac8eaf17cbbe94d474a4bfe89dd[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Fri Sep 3 11:33:36 2021 -0400
+
+    Archivo de configuracion de babel
+
+[33mcommit a938e6f7bdd6f851a283f0463c5c1b9b376683d4[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Fri Sep 3 11:32:02 2021 -0400
+
+    babel-jest @babel/core @babel/present-env
+
+[33mcommit 9e197b7876192eaf9a9a797a6b3865f523923e94[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Fri Sep 3 11:01:27 2021 -0400
+
+    Jest añadido al proyecto
+
+[33mcommit 9e85e7af53e25d57e0e96646c56261d84f35639d[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Sun Aug 15 07:49:18 2021 -0400
+
+    Parcel se anade al proyecto
+
+[33mcommit fe663c7dec42992ecc36def36bab9d45ede79112[m
+Author: Israel Antezana Rojas <israelantezana@gmail.com>
+Date:   Sat Aug 14 22:40:26 2021 -0400
+
+    Base
