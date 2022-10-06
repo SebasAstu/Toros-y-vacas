@@ -15,4 +15,10 @@ describe("", () => {
         expect(resultado).toEqual("12345");
       });
 
+     it("no deberia guardar el numero secreto menor a 4 digitos y mayor a 6", () => {
+        const resultado = tv.guardarCodigo("1234567");
+  
+        expect(resultado).toEqual("la cadena debe ser mayor a 4 y menor a 6 digitos");
+      });
+
   });
