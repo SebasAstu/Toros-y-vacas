@@ -35,5 +35,10 @@ describe("", () => {
 
       expect(resultado).toEqual("El numero esta fuera de los limites");
     });
+    it("Deberia restar el numero de intentos despues de cada intento ", () => {
+      const resultado = tv.compararCodigo("23456");
+
+      expect(tv._cantidadIntentos).toEqual(6);
+    });
 
   });

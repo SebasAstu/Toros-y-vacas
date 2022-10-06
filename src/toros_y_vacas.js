@@ -1,6 +1,7 @@
 class ToroVaca{
 
     _codigoSecreto=0;
+    _cantidadIntentos=8;
 
     guardarCodigo(cadena)
     {
@@ -18,6 +19,7 @@ class ToroVaca{
     {
         if(cadena.length==this._codigoSecreto.length)
         {
+            this._cantidadIntentos--;
             return cadena;
         }
         else{
