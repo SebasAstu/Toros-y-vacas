@@ -22,3 +22,12 @@ describe("", () => {
       });
 
   });
+
+
+  describe("", () => {
+    it("el segundo jugador ingresa un numero delimitado por el primer jugador ", () => {
+      const resultado = tv.compararCodigo("23456");
+
+      expect(resultado).toEqual("23456");
+    });
+  });

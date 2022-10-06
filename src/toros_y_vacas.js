@@ -14,5 +14,12 @@ class ToroVaca{
             return "la cadena debe ser mayor a 4 y menor a 6 digitos";
         }
     }
+    compararCodigo(cadena)
+    {
+        if(cadena.length==this._codigoSecreto.length)
+        {
+            return cadena;
+        }
+    }
 }
 export default ToroVaca;
