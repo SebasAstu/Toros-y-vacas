@@ -1,25 +1,27 @@
 <html>
   <body>
     <h1>Toros y Vacas</h1>
-    <form id="sumar-form">
+    <form id="guardar-form">
       <div> 
         <label for="primer-numero">Codigo secreto:</label>
-        <input type="password" id="primer-numero" />
-        <input type="submit" value="Iniciar" />
+        <input type="password" id="codigo-secreto" />
+        <input type="submit" value="Iniciar" id="btn-iniciar" />
       </div>
       
-      <div>
-        <label for="segundo-numero">Adivinar:</label>
-        <input type="number" id="segundo-numero" />
-        <input type="submit" value="Adivinar" />
-      </div>
+     
       
       <div>
         <label>Respuesta:</label>
         <div id="resultado-div"></div>
       </div>
     </form>
-    
+    <form id="adivinar-form">
+      <div>
+        <label for="segundo-numero">Adivinar:</label>
+        <input type="number" id="segundo-numero" />
+        <input type="submit" value="Adivinar" />
+      </div>
+    </form>
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
