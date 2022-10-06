@@ -20,6 +20,9 @@ class ToroVaca{
         {
             return cadena;
         }
+        else{
+            return "El numero esta fuera de los limites";
+        }
     }
 }
 export default ToroVaca;

@@ -30,4 +30,10 @@ describe("", () => {
 
       expect(resultado).toEqual("23456");
     });
+    it("el segundo jugador ingresa un numero fuera del limite creado por el primer jugador ", () => {
+      const resultado = tv.compararCodigo("2343256");
+
+      expect(resultado).toEqual("El numero esta fuera de los limites");
+    });
+
   });
