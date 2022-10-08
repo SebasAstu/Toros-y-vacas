@@ -32,18 +32,18 @@ describe("", () => {
 
   describe("", () => {
     it("el segundo jugador ingresa un numero delimitado por el primer jugador ", () => {
+      const codSecreto= tv.guardarCodigo("23456");
       const resultado = tv.compararCodigo("23456");
-
       expect(resultado).toEqual("23456");
     });
     it("el segundo jugador ingresa un numero fuera del limite creado por el primer jugador ", () => {
+      const codSecreto= tv.guardarCodigo("234326");
       const resultado = tv.compararCodigo("2343256");
-
       expect(resultado).toEqual("El numero esta fuera de los limites");
     });
     it("Deberia restar el numero de intentos despues de cada intento ", () => {
-      const resultado = tv.compararCodigo("23456");
-
+      const codSecreto= tv.guardarCodigo("23456");
+      const resultado = tv.compararCodigo("23455");
       expect(tv._cantidadIntentos).toEqual(6);
     });
 
