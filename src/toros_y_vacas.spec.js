@@ -48,14 +48,22 @@ describe("guardar codigo secreto", () => {
   describe("Adivinar toro", () => {
     it("deberia devolver (!) si algun digito coincide con el codigo secreto", () => {
       const codSecreto= tv.guardarCodigo("23456");
-      const resultado = tv.compararCodigo("25697");
+      const resultado = tv.compararCodigo("20897");
       expect(resultado).toEqual("!");
     });
 
-    it("no deberia devolver (*) si si ningun digito coincide con el codigo secreto", () => {
+    it("no deberia devolver (!) si si ningun digito coincide con el codigo secreto", () => {
       const codSecreto= tv.guardarCodigo("23456");
-      const resultado = tv.compararCodigo("15697");
+      const resultado = tv.compararCodigo("10789");
       expect(resultado).toEqual("");
+    });
+  });
+
+  describe("Adivinar vaca", () => {
+    it("deberia devolver (*) si algun digito coincide en con el codigo secreto pero no se enecuentra en la posicion correcta", () => {
+      const codSecreto= tv.guardarCodigo("23456");
+      const resultado = tv.compararCodigo("12897");
+      expect(resultado).toEqual("*");
     });
 
   });

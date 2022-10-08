@@ -40,12 +40,32 @@ class ToroVaca{
 
     buscarVacaToro(codigoIngresado){    
         let output="";
-        for(var i = 0;i<codigoIngresado.length;i++){
-            if(this._codigoSecreto[i]==codigoIngresado[i]){
+        const codVec1 = this.separarCodigo(this._codigoSecreto);
+        const codVec2 = this.separarCodigo(codigoIngresado);
+        console.log(codVec1);
+        console.log(codVec2);
+        for(var i = 0;i<codVec1.length;i++){
+            if(codVec1[i]==codVec2[i]){
                 output += "!";
             }
-        }                   
+            else{                
+                if(codVec1.includes(codVec2[i])){
+                   // console.log(codVec1);
+                    //console.log(codVec2[i]);
+                    output += "*";
+                }
+            }                   
+        }
         return output;
+    }
+    separarCodigo(cadena){
+        let numString = String(cadena);
+        const array = []    
+        for(var i = 0;i<numString.length;i++){
+            let valInsert = +numString.charAt(i);
+            array.push(valInsert);        
+        }
+        return array;
     }
 }
 export default ToroVaca;
