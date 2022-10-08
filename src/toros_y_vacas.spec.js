@@ -65,5 +65,9 @@ describe("guardar codigo secreto", () => {
       const resultado = tv.compararCodigo("12897");
       expect(resultado).toEqual("*");
     });
-
+    it("no deberia devolver (*) si si ningun digito coincide con el codigo secreto", () => {
+      const codSecreto= tv.guardarCodigo("23456");
+      const resultado = tv.compararCodigo("10789");
+      expect(resultado).toEqual("");
+    });
   });
