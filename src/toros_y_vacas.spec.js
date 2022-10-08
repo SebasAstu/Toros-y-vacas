@@ -2,7 +2,7 @@ import ToroVaca from "./toros_y_vacas"
 
 const tv = new ToroVaca();
 
-describe("", () => {
+describe("guardar codigo secreto", () => {
     it("deberia guardar el numero secreto mayor a 4 digitos", () => {
       const resultado = tv.guardarCodigo("23456");
 
@@ -30,12 +30,8 @@ describe("", () => {
   });
 
 
-  describe("", () => {
-    it("el segundo jugador ingresa un numero delimitado por el primer jugador ", () => {
-      const codSecreto= tv.guardarCodigo("23456");
-      const resultado = tv.compararCodigo("23456");
-      expect(resultado).toEqual("23456");
-    });
+  describe("intentos", () => {
+  
     it("el segundo jugador ingresa un numero fuera del limite creado por el primer jugador ", () => {
       const codSecreto= tv.guardarCodigo("234326");
       const resultado = tv.compararCodigo("2343256");
@@ -44,7 +40,16 @@ describe("", () => {
     it("Deberia restar el numero de intentos despues de cada intento ", () => {
       const codSecreto= tv.guardarCodigo("23456");
       const resultado = tv.compararCodigo("23455");
-      expect(tv._cantidadIntentos).toEqual(6);
+      expect(tv._cantidadIntentos).toEqual(7);
+    });
+
+  });
+
+  describe("Adivinar toro", () => {
+    it("deberia devolver (!) si algun digito coincide con el codigo secreto", () => {
+      const codSecreto= tv.guardarCodigo("23456");
+      const resultado = tv.compararCodigo("25697");
+      expect(resultado).toEqual("!");
     });
 
   });

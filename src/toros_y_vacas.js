@@ -25,14 +25,27 @@ class ToroVaca{
     }
     compararCodigo(cadena)
     {
+        let resp="";
         if(cadena.length==this._codigoSecreto.length)
         {
+            resp=this.buscarVacaToro(cadena);
             this._cantidadIntentos--;
-            return cadena;
+           
         }
         else{
-            return "El numero esta fuera de los limites";
+            resp= "El numero esta fuera de los limites";
         }
+        return resp;
+    }
+
+    buscarVacaToro(codigoIngresado){    
+        let output="";
+        for(var i = 0;i<codigoIngresado.length;i++){
+            if(this._codigoSecreto[i]==codigoIngresado[i]){
+                output += "!";
+            }
+        }                   
+        return output;
     }
 }
 export default ToroVaca;
