@@ -10,6 +10,7 @@ class ToroVaca{
         if(this._codigoSecreto==0)
         {
             this.guardarCodigo(codigo);
+            intentos = "codigo secreto ingresado, iniciar partida";
         }
         else
         {
@@ -17,15 +18,16 @@ class ToroVaca{
             {
                 intentos = this.compararCodigo(cadena);
 
-                if(cadena==codigo)
+                if(cadena==this._codigoSecreto)
                 {
-                    return "felicidades jugador 2 ganaste!";
+                    intentos= "felicidades jugador 2 ganaste!";
                 } 
             }
             else{
-                return "Lo siento, jugador 2 perdiste!";
+                intentos= "Lo siento, jugador 2 perdiste! el codigo secreto es: "+ this._codigoSecreto;
             }
         }
+        return intentos;
     }
 
     guardarCodigo(cadena)

@@ -97,7 +97,6 @@ describe("guardar codigo secreto", () => {
       tv.partida("12345","67895");
       tv.partida("12345","67896");
       const resultado= tv.partida("12345","67896");
-      //expect(tv._cantidadIntentos).toEqual(7);
-      expect(resultado).toEqual("Lo siento, jugador 2 perdiste!");
+      expect(resultado).toEqual("Lo siento, jugador 2 perdiste! el codigo secreto es: "+ tv._codigoSecreto);
     });
   });
