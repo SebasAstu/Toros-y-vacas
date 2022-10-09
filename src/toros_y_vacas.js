@@ -3,6 +3,29 @@ class ToroVaca{
     _codigoSecreto=0;
     _cantidadIntentos=8;
 
+    partida(codigo,cadena)
+    {
+        let intentos="";
+
+        if(this._codigoSecreto==0)
+        {
+            this.guardarCodigo(codigo);
+        }
+        else
+        {
+            if(this._cantidadIntentos>0)
+            {
+                intentos = this.compararCodigo(cadena);
+
+                if(cadena==codigo)
+                {
+                    return "felicidades jugador 2 ganaste!"
+                }
+                
+            }
+        }
+    }
+
     guardarCodigo(cadena)
     {
        if(cadena =="")
@@ -23,6 +46,7 @@ class ToroVaca{
        }
         
     }
+
     compararCodigo(cadena)
     {
         let resp="";
@@ -50,8 +74,6 @@ class ToroVaca{
             }
             else{                
                 if(codVec1.includes(codVec2[i])){
-                   // console.log(codVec1);
-                    //console.log(codVec2[i]);
                     output += "*";
                 }
             }                   

@@ -71,3 +71,14 @@ describe("guardar codigo secreto", () => {
       expect(resultado).toEqual("");
     });
   });
+
+  describe("Verificar ganador", () => {
+
+    let tv = new ToroVaca();
+
+    it("deberia devolver un mensaje de que gano si la cantidad de (!) es igual al tamaño del codigo secreto ", () => {
+      tv.partida("12345","12345");
+      const resultado= tv.partida("12345","12345");
+      expect(resultado).toEqual("felicidades jugador 2 ganaste!");
+    });
+  });
