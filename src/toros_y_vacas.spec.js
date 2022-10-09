@@ -100,3 +100,14 @@ describe("guardar codigo secreto", () => {
       expect(resultado).toEqual("Lo siento, jugador 2 perdiste! el codigo secreto es: "+ tv._codigoSecreto);
     });
   });
+
+   describe("Definir numero de intentos para el segundo jugador", () => {
+
+    let tv = new ToroVaca();
+
+    it("deberia devolver el numero de intentos definido por el primer jugador", () => {
+      tv.partida("12345","67890");
+      tv.definirIntentos(10);
+      expect(tv._cantidadIntentos).toEqual(10);
+    });
+  });

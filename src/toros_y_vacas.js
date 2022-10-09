@@ -30,6 +30,11 @@ class ToroVaca{
         return intentos;
     }
 
+    definirIntentos(numIntentos)
+    {
+        this._cantidadIntentos=numIntentos;
+    }
+
     guardarCodigo(cadena)
     {
        if(cadena =="")
