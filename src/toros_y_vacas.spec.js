@@ -82,3 +82,22 @@ describe("guardar codigo secreto", () => {
       expect(resultado).toEqual("felicidades jugador 2 ganaste!");
     });
   });
+
+  describe("Verificar perdedor", () => {
+
+    let tv = new ToroVaca();
+
+    it("Cuando la cantidad de intentos llegue a 0 el segundo jugador pierde la partida y se mostrara el mensaje que perdio ", () => {
+      tv.partida("12345","67890");
+      tv.partida("12345","67898");
+      tv.partida("12345","67894");
+      tv.partida("12345","67891");
+      tv.partida("12345","67892");
+      tv.partida("12345","67893");
+      tv.partida("12345","67895");
+      tv.partida("12345","67896");
+      const resultado= tv.partida("12345","67896");
+      //expect(tv._cantidadIntentos).toEqual(7);
+      expect(resultado).toEqual("Lo siento, jugador 2 perdiste!");
+    });
+  });

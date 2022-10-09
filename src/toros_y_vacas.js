@@ -13,15 +13,17 @@ class ToroVaca{
         }
         else
         {
-            if(this._cantidadIntentos>0)
+            if(this._cantidadIntentos>1)
             {
                 intentos = this.compararCodigo(cadena);
 
                 if(cadena==codigo)
                 {
-                    return "felicidades jugador 2 ganaste!"
-                }
-                
+                    return "felicidades jugador 2 ganaste!";
+                } 
+            }
+            else{
+                return "Lo siento, jugador 2 perdiste!";
             }
         }
     }
