@@ -116,12 +116,14 @@ describe("guardar codigo secreto", () => {
 
     it("Cuando la cantidad de intentos llegue a 0 el segundo jugador pierde la partida y se mostrara el mensaje que perdio ", () => {
       juego.partida("12345","67890");
+
       juego.partida("12345","67898");
       juego.partida("12345","67894");
       juego.partida("12345","67891");
       juego.partida("12345","67892");
       juego.partida("12345","67893");
       juego.partida("12345","67895");
+      juego.partida("12345","67896");
       juego.partida("12345","67896");
       const resultado= juego.partida("12345","67896");
       expect(resultado).toEqual("Lo siento, jugador 2 perdiste! el codigo secreto es: "+ juego._codigoSecreto);

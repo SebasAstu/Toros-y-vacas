@@ -12,10 +12,9 @@ class ToroVaca{
             this.guardarCodigoSecreto(codigoAAdivinar);
             resultadoJuego = "codigo secreto ingresado, iniciar partida";
         }
-        //if(this._codigoSecreto!=0)
         else
         {
-            if(this._cantidadIntentos>0)
+            if(this._cantidadIntentos>1)
             {
                 resultadoJuego = this.verificarCodigo(codigoAdivinando);
 
@@ -24,8 +23,7 @@ class ToroVaca{
                     resultadoJuego= "felicidades jugador 2 ganaste!";
                 } 
             }
-            if(this._cantidadIntentos==0)
-            {
+            else{
                 resultadoJuego= "Lo siento, jugador 2 perdiste! el codigo secreto es: "+ this._codigoSecreto;
             }
         }
@@ -34,42 +32,34 @@ class ToroVaca{
 
     definirIntentos(numIntentos)
     {
-        let respuesta="";
-
         if(numIntentos>0)
         {
-            respuesta= this._cantidadIntentos=numIntentos;
+            return this._cantidadIntentos=numIntentos;
         }
         else
         {
-            respuesta= "El numero debe ser mayor a 0";
+            return "El numero debe ser mayor a 0";
         }
-
-        return respuesta;
     }
 
     guardarCodigoSecreto(codigoAAdivinar)
     {
-        let respuesta="";
-
        if(codigoAAdivinar =="")
        {
-         respuesta= "El codigo a adivinar no puede estar vacio"
+          return "El codigo a adivinar no puede estar vacio"
        }
        else
        {
           if(codigoAAdivinar.length>=4 && codigoAAdivinar.length<=6)
           {
                this._codigoSecreto=codigoAAdivinar;
-               respuesta= this._codigoSecreto;
+               return this._codigoSecreto;
           } 
           else 
           {
-            respuesta= "El codigo a adivinar debe ser mayor a 4 y menor a 6 digitos";
+               return "El codigo a adivinar debe ser mayor a 4 y menor a 6 digitos";
           }
        }
-
-       return respuesta;
         
     }
 
