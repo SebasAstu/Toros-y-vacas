@@ -14,18 +14,24 @@ const numIntentos = document.querySelector("#numero-intentos");
 formGuardar.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const codigo_secreto = tv.partida(codigoSecreto.value,"");
   if(numIntentos.value==8)
   {
     tv.definirIntentos(8);
   }
-  else
+  if(numIntentos.value>0)
   {
     tv.definirIntentos(numIntentos.value);
+    const codigo_secreto = tv.partida(codigoSecreto.value,"");
+    div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
+    div.innerHTML = "<p>" +codigo_secreto + "</p>";
   }
-  div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
+  else
+  {
+    const mensaje = tv.definirIntentos(numIntentos.value);
+    alert(mensaje);
+  }
   
-  div.innerHTML = "<p>" +codigo_secreto + "</p>";
+  
 });
 
 formAdivinar.addEventListener("submit", (event) => {

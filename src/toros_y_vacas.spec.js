@@ -107,7 +107,14 @@ describe("guardar codigo secreto", () => {
 
     it("deberia devolver el numero de intentos definido por el primer jugador", () => {
       tv.partida("12345","67890");
-      tv.definirIntentos(10);
-      expect(tv._cantidadIntentos).toEqual(10);
+      const resultado=tv.definirIntentos(10);
+      expect(resultado).toEqual(10);
     });
+
+    it("si el numero ingresado no es a 0 deberia devolver un mensaje de error", () => {
+      tv.partida("12345","67890");
+      const resultado=tv.definirIntentos(-10);
+      expect(resultado).toEqual("El numero debe ser mayor a 0");
+    });
+
   });
