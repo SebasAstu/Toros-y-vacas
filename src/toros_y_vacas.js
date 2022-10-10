@@ -9,14 +9,14 @@ class ToroVaca{
 
         if(this._codigoSecreto==0)
         {
-            this.guardarCodigo(codigoAAdivinar);
+            this.guardarCodigoSecreto(codigoAAdivinar);
             resultadoJuego = "codigo secreto ingresado, iniciar partida";
         }
         else
         {
             if(this._cantidadIntentos>1)
             {
-                resultadoJuego = this.compararCodigo(codigoAdivinando);
+                resultadoJuego = this.verificarCodigo(codigoAdivinando);
 
                 if(codigoAdivinando==this._codigoSecreto)
                 {
@@ -42,7 +42,7 @@ class ToroVaca{
         }
     }
 
-    guardarCodigo(codigoAAdivinar)
+    guardarCodigoSecreto(codigoAAdivinar)
     {
        if(codigoAAdivinar =="")
        {
@@ -63,7 +63,7 @@ class ToroVaca{
         
     }
 
-    compararCodigo(codigoAdivinando)
+    verificarCodigo(codigoAdivinando)
     {
         let respuesta="";
         if(codigoAdivinando.length==this._codigoSecreto.length)

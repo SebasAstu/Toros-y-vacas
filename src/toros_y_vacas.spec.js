@@ -8,25 +8,25 @@ describe("guardar codigo secreto", () => {
   });
 
     it("deberia guardar el numero secreto mayor a 4 digitos", () => {
-      const resultado = juego.guardarCodigo("23456");
+      const resultado = juego.guardarCodigoSecreto("23456");
 
       expect(resultado).toEqual("23456");
     });
 
     it("deberia guardar el numero secreto mayor a 4 digitos y menor a 6", () => {
-        const resultado = juego.guardarCodigo("12345");
+        const resultado = juego.guardarCodigoSecreto("12345");
   
         expect(resultado).toEqual("12345");
       });
 
     it("no deberia guardar el numero secreto menor a 4 digitos y mayor a 6", () => {
-        const resultado = juego.guardarCodigo("1234567");
+        const resultado = juego.guardarCodigoSecreto("1234567");
   
         expect(resultado).toEqual("El codigo a adivinar debe ser mayor a 4 y menor a 6 digitos");
       });
 
     it("no deberia guardar el numero secreto si la cadena esta vacia", () => {
-        const resultado = juego.guardarCodigo("");
+        const resultado = juego.guardarCodigoSecreto("");
   
         expect(resultado).toEqual("El codigo a adivinar no puede estar vacio");
       });
@@ -42,19 +42,19 @@ describe("guardar codigo secreto", () => {
     });
   
     it("el segundo jugador ingresa un numero fuera del limite creado por el primer jugador ", () => {
-      juego.guardarCodigo("234326");
-      const resultado = juego.compararCodigo("2343256");
+      juego.guardarCodigoSecreto("234326");
+      const resultado = juego.verificarCodigo("2343256");
       expect(resultado).toEqual("El numero esta fuera de los limites");
     });
     it("Deberia restar el numero de intentos despues de cada intento ", () => {
-      juego.guardarCodigo("23456");
-      const resultado = juego.compararCodigo("23455");
+      juego.guardarCodigoSecreto("23456");
+      const resultado = juego.verificarCodigo("23455");
       expect(juego._cantidadIntentos).toEqual(7);
     });
 
   });
 
-  describe("Adivinar toro", () => {
+  describe("Controlar si el codigo Advivinando es toro", () => {
 
     let juego;
     beforeEach(()=> {
@@ -62,19 +62,19 @@ describe("guardar codigo secreto", () => {
     });
 
     it("deberia devolver (!) si algun digito coincide con el codigo secreto", () => {
-      juego.guardarCodigo("23456");
-      const resultado = juego.compararCodigo("20897");
+      juego.guardarCodigoSecreto("23456");
+      const resultado = juego.verificarCodigo("20897");
       expect(resultado).toEqual("!");
     });
 
     it("no deberia devolver (!) si si ningun digito coincide con el codigo secreto", () => {
-      juego.guardarCodigo("23456");
-      const resultado = juego.compararCodigo("10789");
+      juego.guardarCodigoSecreto("23456");
+      const resultado = juego.verificarCodigo("10789");
       expect(resultado).toEqual("");
     });
   });
 
-  describe("Adivinar vaca", () => {
+  describe("Controlar si el codigo Advivinando es vaca", () => {
 
     let juego;
     beforeEach(()=> {
@@ -82,13 +82,13 @@ describe("guardar codigo secreto", () => {
   });
 
     it("deberia devolver (*) si algun digito coincide en con el codigo secreto pero no se enecuentra en la posicion correcta", () => {
-      juego.guardarCodigo("23456");
-      const resultado = juego.compararCodigo("12897");
+      juego.guardarCodigoSecreto("23456");
+      const resultado = juego.verificarCodigo("12897");
       expect(resultado).toEqual("*");
     });
     it("no deberia devolver (*) si si ningun digito coincide con el codigo secreto", () => {
-      juego.guardarCodigo("23456");
-      const resultado = juego.compararCodigo("10789");
+      juego.guardarCodigoSecreto("23456");
+      const resultado = juego.verificarCodigo("10789");
       expect(resultado).toEqual("");
     });
   });
