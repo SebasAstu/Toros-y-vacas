@@ -9,14 +9,29 @@ const div = document.querySelector("#resultado-div");
 const div2 = document.querySelector("#intentos-div");
 const divTv=document.querySelector("#torovaca-div");
 const numAdivinar=document.querySelector("#adivinar-numero");
+const numIntentos = document.querySelector("#numero-intentos");
 
 formGuardar.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const codigo_secreto = tv.partida(codigoSecreto.value,"");
-  div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
-
-  div.innerHTML = "<p>" +codigo_secreto + "</p>";
+  if(numIntentos.value==8)
+  {
+    tv.definirIntentos(8);
+  }
+  if(numIntentos.value>0)
+  {
+    tv.definirIntentos(numIntentos.value);
+    const codigo_secreto = tv.partida(codigoSecreto.value,"");
+    div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
+    div.innerHTML = "<p>" +codigo_secreto + "</p>";
+  }
+  else
+  {
+    const mensaje = tv.definirIntentos(numIntentos.value);
+    alert(mensaje);
+  }
+  
+  
 });
 
 formAdivinar.addEventListener("submit", (event) => {
