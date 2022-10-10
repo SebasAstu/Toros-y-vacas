@@ -23,7 +23,7 @@ formGuardarCodigo.addEventListener("submit", (event) => {
     juego.definirIntentos(numIntentos.value);
     const codigo_secreto = juego.partida(codigoSecreto.value,"");
     divCantidadIntentos.innerHTML = "<p>" + juego._cantidadIntentos+ "</p>";
-    divRespuestaPatida.innerHTML = "<p>" +codigo_secreto + "</p>";
+    alert(codigo_secreto);
   }
   else
   {
