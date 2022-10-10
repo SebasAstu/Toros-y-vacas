@@ -3,31 +3,31 @@ class ToroVaca{
     _codigoSecreto=0;
     _cantidadIntentos=8;
 
-    partida(codigo,cadena)
+    partida(codigoAAdivinar,codigoAdivinando)
     {
-        let intentos="";
+        let resultadoJuego="";
 
         if(this._codigoSecreto==0)
         {
-            this.guardarCodigo(codigo);
-            intentos = "codigo secreto ingresado, iniciar partida";
+            this.guardarCodigo(codigoAAdivinar);
+            resultadoJuego = "codigo secreto ingresado, iniciar partida";
         }
         else
         {
             if(this._cantidadIntentos>1)
             {
-                intentos = this.compararCodigo(cadena);
+                resultadoJuego = this.compararCodigo(codigoAdivinando);
 
-                if(cadena==this._codigoSecreto)
+                if(codigoAdivinando==this._codigoSecreto)
                 {
-                    intentos= "felicidades jugador 2 ganaste!";
+                    resultadoJuego= "felicidades jugador 2 ganaste!";
                 } 
             }
             else{
-                intentos= "Lo siento, jugador 2 perdiste! el codigo secreto es: "+ this._codigoSecreto;
+                resultadoJuego= "Lo siento, jugador 2 perdiste! el codigo secreto es: "+ this._codigoSecreto;
             }
         }
-        return intentos;
+        return resultadoJuego;
     }
 
     definirIntentos(numIntentos)
@@ -42,62 +42,61 @@ class ToroVaca{
         }
     }
 
-    guardarCodigo(cadena)
+    guardarCodigo(codigoAAdivinar)
     {
-       if(cadena =="")
+       if(codigoAAdivinar =="")
        {
-          return "la cadena no puede estar vacia"
+          return "El codigo a adivinar no puede estar vacio"
        }
        else
        {
-          if(cadena.length>=4 && cadena.length<=6)
+          if(codigoAAdivinar.length>=4 && codigoAAdivinar.length<=6)
           {
-               this._codigoSecreto=cadena;
+               this._codigoSecreto=codigoAAdivinar;
                return this._codigoSecreto;
           } 
           else 
           {
-               return "la cadena debe ser mayor a 4 y menor a 6 digitos";
+               return "El codigo a adivinar debe ser mayor a 4 y menor a 6 digitos";
           }
        }
         
     }
 
-    compararCodigo(cadena)
+    compararCodigo(codigoAdivinando)
     {
-        let resp="";
-        if(cadena.length==this._codigoSecreto.length)
+        let respuesta="";
+        if(codigoAdivinando.length==this._codigoSecreto.length)
         {
-            resp=this.buscarVacaToro(cadena);
+            respuesta=this.buscarVacaToro(codigoAdivinando);
             this._cantidadIntentos--;
            
         }
         else{
-            resp= "El numero esta fuera de los limites";
+            respuesta= "El numero esta fuera de los limites";
         }
-        return resp;
+        return respuesta;
     }
 
-    buscarVacaToro(codigoIngresado){    
-        let output="";
+    buscarVacaToro(codigoAdivinando)
+    {    
+        let señal="";
         const codVec1 = this.separarCodigo(this._codigoSecreto);
-        const codVec2 = this.separarCodigo(codigoIngresado);
-        console.log(codVec1);
-        console.log(codVec2);
+        const codVec2 = this.separarCodigo(codigoAdivinando);
         for(var i = 0;i<codVec1.length;i++){
             if(codVec1[i]==codVec2[i]){
-                output += "!";
+                señal += "!";
             }
             else{                
                 if(codVec1.includes(codVec2[i])){
-                    output += "*";
+                    señal += "*";
                 }
             }                   
         }
-        return output;
+        return señal;
     }
-    separarCodigo(cadena){
-        let numString = String(cadena);
+    separarCodigo(codigo){
+        let numString = String(codigo);
         const array = []    
         for(var i = 0;i<numString.length;i++){
             let valInsert = +numString.charAt(i);

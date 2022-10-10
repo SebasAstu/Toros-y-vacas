@@ -1,44 +1,43 @@
 import ToroVaca from "./toros_y_vacas.js";
 
-let tv = new ToroVaca();
+let juego = new ToroVaca();
 
 const codigoSecreto = document.querySelector("#codigo-secreto");
-const formGuardar = document.querySelector("#guardar-form");
-const formAdivinar = document.querySelector("#adivinar-form");
-const div = document.querySelector("#resultado-div");
-const div2 = document.querySelector("#intentos-div");
-const divTv=document.querySelector("#torovaca-div");
+const formGuardarCodigo = document.querySelector("#guardar-form");
+const formAdivinarCodigo = document.querySelector("#adivinar-form");
+const divRespuestaPatida = document.querySelector("#respuesta-div");
+const divCantidadIntentos = document.querySelector("#intentos-div");
+const divJuego=document.querySelector("#torovaca-div");
 const numAdivinar=document.querySelector("#adivinar-numero");
 const numIntentos = document.querySelector("#numero-intentos");
 
-formGuardar.addEventListener("submit", (event) => {
+formGuardarCodigo.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if(numIntentos.value==8)
   {
-    tv.definirIntentos(8);
+    juego.definirIntentos(8);
   }
   if(numIntentos.value>0)
   {
-    tv.definirIntentos(numIntentos.value);
-    const codigo_secreto = tv.partida(codigoSecreto.value,"");
-    div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
-    div.innerHTML = "<p>" +codigo_secreto + "</p>";
+    juego.definirIntentos(numIntentos.value);
+    const codigo_secreto = juego.partida(codigoSecreto.value,"");
+    divCantidadIntentos.innerHTML = "<p>" + juego._cantidadIntentos+ "</p>";
+    divRespuestaPatida.innerHTML = "<p>" +codigo_secreto + "</p>";
   }
   else
   {
-    const mensaje = tv.definirIntentos(numIntentos.value);
+    const mensaje = juego.definirIntentos(numIntentos.value);
     alert(mensaje);
   }
   
   
 });
 
-formAdivinar.addEventListener("submit", (event) => {
+formAdivinarCodigo.addEventListener("submit", (event) => {
  event.preventDefault();
- console.log(numAdivinar.value);
-  let resp=tv.partida("",numAdivinar.value);
-  console.log(resp);
-  div2.innerHTML = "<p>" + tv._cantidadIntentos+ "</p>";
-  divTv.innerHTML = "<p>" + resp + "</p>";
+
+  let respuestaAdivinar=juego.partida("",numAdivinar.value);
+  divCantidadIntentos.innerHTML = "<p>" + juego._cantidadIntentos+ "</p>";
+  divJuego.innerHTML = "<p>" + respuestaAdivinar + "</p>";
 });
