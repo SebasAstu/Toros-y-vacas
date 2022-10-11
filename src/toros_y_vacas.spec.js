@@ -151,7 +151,7 @@ describe("guardar codigo secreto", () => {
     
   });
 
-describe("Ternera # se da cuando uno de los números ingresados por el segundo jugador difiere en 1 del código secreto  ", () => {
+describe("Ternera # se da cuando uno de los digitos ingresados por el segundo jugador difiere en 1 del código secreto  ", () => {
 
     let juego;
     beforeEach(()=> {
@@ -161,5 +161,15 @@ describe("Ternera # se da cuando uno de los números ingresados por el segundo j
     juego.guardarCodigoSecreto("8974");
     const resultado = juego.verificarCodigo("2015");
     expect(resultado).toEqual("#");
+  });
+  it("si el primer jugador ingresa numero 8974  y el egundo jugador ingresa 2065 deberia retornar ##", () => {
+    juego.guardarCodigoSecreto("8974");
+    const resultado = juego.verificarCodigo("2065");
+    expect(resultado).toEqual("##");
+  });
+  it("si el primer jugador ingresa numero 1234 deberia retornar %% ", () => {
+    juego.guardarCodigoSecreto("1234");
+    const resultado = juego.buscarPrimo(1234);
+    expect(resultado).toEqual("%%");
   });
 });
