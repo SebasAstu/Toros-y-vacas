@@ -150,3 +150,13 @@ describe("guardar codigo secreto", () => {
     });
 
   });
+
+  describe("Controlar Bisonte", () => {
+
+    let juego = new ToroVaca;
+
+    it("deberia devolver (%)si en el codigo secreto enviado por el primer jugador existen numeros primos", () => {
+      const resultado= juego.buscarBisonte("1234");
+      expect(resultado).toEqual("%%");
+    });
+  });

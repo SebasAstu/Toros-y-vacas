@@ -88,6 +88,42 @@ class ToroVaca{
         return respuesta;
     }
 
+    esPrimo(n)
+    {
+        if (n<=1) 
+        {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(n); i++)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+             
+        }
+        
+        return true;
+    }
+
+    buscarBisonte(codigoSecreto)
+    {
+        let señal="";
+        let primo=false;
+        //const codVec1 = this.separarCodigo(codigoSecreto);
+
+        for(var i = 0;i<codigoSecreto.length;i++){  
+           primo = this.esPrimo(Number.parseInt(codigoSecreto[i]))  
+            
+            if(primo)
+            {
+                señal += "%";
+            }
+            
+        }
+        return señal;
+    }
+
     buscarVacaToro(codigoAdivinando)
     {    
         let señal="";
