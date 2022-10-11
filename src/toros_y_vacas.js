@@ -101,9 +101,17 @@ class ToroVaca{
                 if(codVec1.includes(codVec2[i])){
                     señal += "*";
                 }
+                else{
+                    if(codVec1.includes(codVec2[i]-1) || codVec1.includes(codVec2[i]+1)){
+                        señal += "#";           
+                    }
+                }
             }                   
         }
         return señal;
+    }
+    buscarPrimo(codigoAdivinando){
+        isPrime(codigoAdivinando);
     }
     separarCodigo(codigo){
         let numString = String(codigo);
