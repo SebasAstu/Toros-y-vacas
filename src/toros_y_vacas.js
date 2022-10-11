@@ -88,6 +88,17 @@ class ToroVaca{
         return respuesta;
     }
 
+    buscarTerneraF(codigoAAdivinar,codigoAdivinando){            
+        const codVec1 = this.separarCodigo(codigoAAdivinar);
+        const codVec2 = this.separarCodigo(codigoAdivinando);
+        let output="";
+        for(var i = 0;i<codVec1.length;i++){
+            if(codVec1.includes(codVec2[i]-1) || codVec1.includes(codVec2[i]+1)){
+                output += "#";                
+            }
+        }
+        return output;
+    }
     buscarVacaToro(codigoAdivinando)
     {    
         let señal="";
@@ -100,6 +111,11 @@ class ToroVaca{
             else{                
                 if(codVec1.includes(codVec2[i])){
                     señal += "*";
+                }
+                else{
+                    if(codVec1.includes(codVec2[i]-1) || codVec1.includes(codVec2[i]+1)){
+                        señal += "#";           
+                    }
                 }
             }                   
         }

@@ -63,13 +63,13 @@ describe("guardar codigo secreto", () => {
 
     it("deberia devolver (!) si algun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
-      const resultado = juego.verificarCodigo("20897");
+      const resultado = juego.verificarCodigo("20899");
       expect(resultado).toEqual("!");
     });
 
     it("no deberia devolver (!) si si ningun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
-      const resultado = juego.verificarCodigo("10789");
+      const resultado = juego.verificarCodigo("99999");
       expect(resultado).toEqual("");
     });
   });
@@ -82,13 +82,13 @@ describe("guardar codigo secreto", () => {
   });
 
     it("deberia devolver (*) si algun digito coincide en con el codigo secreto pero no se enecuentra en la posicion correcta", () => {
-      juego.guardarCodigoSecreto("23456");
-      const resultado = juego.verificarCodigo("12897");
+      juego.guardarCodigoSecreto("25455");
+      const resultado = juego.verificarCodigo("02897");
       expect(resultado).toEqual("*");
     });
     it("no deberia devolver (*) si si ningun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
-      const resultado = juego.verificarCodigo("10789");
+      const resultado = juego.verificarCodigo("00000");
       expect(resultado).toEqual("");
     });
   });
@@ -148,5 +148,18 @@ describe("guardar codigo secreto", () => {
       const resultado=juego.definirIntentos(-10);
       expect(resultado).toEqual("El numero debe ser mayor a 0");
     });
-
+    
   });
+
+describe("Ternera # se da cuando uno de los números ingresados por el segundo jugador difiere en 1 del código secreto  ", () => {
+
+    let juego;
+    beforeEach(()=> {
+    juego = new ToroVaca
+  });
+  it("si el primer jugador ingresa numero 1234  y el segundo jugador ingresa 1235 deberia retornar #", () => {
+    juego.guardarCodigoSecreto("8974");
+    const resultado = juego.verificarCodigo("2015");
+    expect(resultado).toEqual("#");
+  });
+});
