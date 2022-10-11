@@ -159,4 +159,19 @@ describe("guardar codigo secreto", () => {
       const resultado= juego.buscarBisonte("1234");
       expect(resultado).toEqual("%%");
     });
+
+
+  });
+
+  describe("Controlar ternera", () => {
+
+    let juego = new ToroVaca;
+
+    it("deberia devolver (#) si en el intento del segundo jugador difiere en 1 del primer jugador", () => {
+      juego.partida("12345","67890");
+      const resultado= juego.partida("12345","12346");
+      expect(resultado).toEqual("!!!!#");
+    });
+
+    
   });
