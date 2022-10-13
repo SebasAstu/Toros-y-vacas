@@ -172,8 +172,13 @@ describe("guardar codigo secreto", () => {
       expect(resultado).toEqual("##");
     });
     it("deberia devolver (###)", () => {
-      juego.guardarCodigoSecreto("23");
+      juego.guardarCodigoSecreto("235");
       const resultado = juego.getTernera("235","344");
       expect(resultado).toEqual("###");
+    });
+    it("retornar # implementado al verificar el codigo que adminte digitos de 4 a 6", () => {
+      juego.guardarCodigoSecreto("8974");
+      const resultado = juego.verificarCodigo("2015");
+      expect(resultado).toEqual("#");
     });
   });
