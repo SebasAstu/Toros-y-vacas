@@ -88,8 +88,23 @@ class ToroVaca{
         }
         return señal;
     }
+    esPrimo(numero){
+        for (var i = 2; i < numero; i++) {
+            if (numero % i === 0) {
+              return false;
+            }
+        }
+        return numero !== 1;
+    }
     getBisonte(codigoAdivinando){
-        return "!";
+        let señal="";
+        if(this.esPrimo(codigoAdivinando)==true){
+            señal += "!";
+        }
+        if(this.esPrimo(codigoAdivinando)==false){
+            señal += "";
+        }
+        return señal;
     }
     verificarCodigo(codigoAdivinando)
     {

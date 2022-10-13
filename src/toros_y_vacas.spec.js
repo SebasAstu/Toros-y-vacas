@@ -195,7 +195,12 @@ describe("guardar codigo secreto", () => {
     });
     it("deberia devolver (!)", () => {
       juego.guardarCodigoSecreto("3");
-      const resultado = juego.getBisonte("3","5");
+      const resultado = juego.getBisonte("5");
       expect(resultado).toEqual("!");
+    });
+    it("deberia devolver ()", () => {
+      juego.guardarCodigoSecreto("3");
+      const resultado = juego.getBisonte("4");
+      expect(resultado).toEqual("");
     });
   });
