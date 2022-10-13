@@ -76,9 +76,13 @@ class ToroVaca{
         let señal="";
         const codVec1 = this.separarCodigo(codigoAAdivinar);
         const codVec2 = this.separarCodigo(codigoAdivinando);
-        if(codVec1.includes(codVec2[0]+1 || codVec1.includes(codVec2[0]-1)))
+        if(codVec1[0]+1==codVec2[0] || codVec1[0]-1==codVec2[0])
         {
             señal += "#";
+        }
+        else
+        {
+            señal += "";
         }
         return señal;
     }
