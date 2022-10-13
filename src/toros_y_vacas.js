@@ -72,7 +72,16 @@ class ToroVaca{
        return respuesta;
         
     }
-
+    getTernera(codigoAAdivinar,codigoAdivinando){
+        let señal="";
+        const codVec1 = this.separarCodigo(codigoAAdivinar);
+        const codVec2 = this.separarCodigo(codigoAdivinando);
+        if(codVec1.includes(codVec2[0]+1 || codVec1.includes(codVec2[0]-1)))
+        {
+            señal += "#";
+        }
+        return señal;
+    }
     verificarCodigo(codigoAdivinando)
     {
         let respuesta="";

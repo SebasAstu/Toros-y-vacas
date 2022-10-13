@@ -150,3 +150,16 @@ describe("guardar codigo secreto", () => {
     });
 
   });
+
+  describe("Devolver # cuando el numero es ternera", () => {
+    let juego;
+    beforeEach(()=> {
+    juego = new ToroVaca
+    });
+    it("deberia devolver (#)", () => {
+      juego.guardarCodigoSecreto("2");
+      const resultado = juego.getTernera("2","3");
+      expect(resultado).toEqual("#");
+    });
+    
+  });
