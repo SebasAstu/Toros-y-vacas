@@ -98,11 +98,14 @@ class ToroVaca{
     }
     getBisonte(codigoAdivinando){
         let señal="";
-        if(this.esPrimo(codigoAdivinando)==true){
-            señal += "!";
-        }
-        if(this.esPrimo(codigoAdivinando)==false){
-            señal += "";
+        const codVec2 = this.separarCodigo(codigoAdivinando);
+        for(var i = 0;i<codVec2.length;i++){
+            if(this.esPrimo(codVec2[i])==true){
+                señal += "!";
+            }
+            if(this.esPrimo(codVec2[i])==false){
+                señal += "";
+            }
         }
         return señal;
     }

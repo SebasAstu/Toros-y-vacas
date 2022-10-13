@@ -203,4 +203,9 @@ describe("guardar codigo secreto", () => {
       const resultado = juego.getBisonte("4");
       expect(resultado).toEqual("");
     });
+    it("deberia devolver (!!)", () => {
+      juego.guardarCodigoSecreto("35");
+      const resultado = juego.getBisonte("57");
+      expect(resultado).toEqual("!!");
+    });
   });
