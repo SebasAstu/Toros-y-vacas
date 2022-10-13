@@ -181,4 +181,9 @@ describe("guardar codigo secreto", () => {
       const resultado = juego.verificarCodigo("2015");
       expect(resultado).toEqual("#");
     });
+    it("deberia retornar ## con la refactorizacion", () => {
+      juego.guardarCodigoSecreto("8974");
+      const resultado = juego.verificarCodigo("2065");
+      expect(resultado).toEqual("##");
+    });
   });
