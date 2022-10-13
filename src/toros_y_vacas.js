@@ -88,6 +88,9 @@ class ToroVaca{
         }
         return señal;
     }
+    getBisonte(codigoAdivinando){
+        return "!";
+    }
     verificarCodigo(codigoAdivinando)
     {
         let respuesta="";

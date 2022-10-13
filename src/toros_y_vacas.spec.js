@@ -187,3 +187,15 @@ describe("guardar codigo secreto", () => {
       expect(resultado).toEqual("##");
     });
   });
+
+  describe("Devolver ! cuando el numero ingresado tiene digitos primos con el condigo secreto", () => {
+    let juego;
+    beforeEach(()=> {
+    juego = new ToroVaca
+    });
+    it("deberia devolver (!)", () => {
+      juego.guardarCodigoSecreto("3");
+      const resultado = juego.getBisonte("3","5");
+      expect(resultado).toEqual("!");
+    });
+  });
