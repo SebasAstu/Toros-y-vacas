@@ -166,4 +166,9 @@ describe("guardar codigo secreto", () => {
       const resultado = juego.getTernera("5","3");
       expect(resultado).toEqual("");
     });
+    it("deberia devolver (##)", () => {
+      juego.guardarCodigoSecreto("23");
+      const resultado = juego.getTernera("23","34");
+      expect(resultado).toEqual("##");
+    });
   });
