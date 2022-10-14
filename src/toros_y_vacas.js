@@ -108,6 +108,8 @@ class ToroVaca{
 
     esPrimo(n)
     {
+
+        
         if (n<=1) 
         {
             return "";
