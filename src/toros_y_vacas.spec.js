@@ -150,3 +150,13 @@ describe("guardar codigo secreto", () => {
     });
 
   });
+
+  describe("Controlar Bisonte", () => {
+
+    let juego = new ToroVaca;
+
+    it("deberia devolver (%) si se envia un solo numero primo", () => {
+      const resultado= juego.esPrimo(3);
+      expect(resultado).toEqual("%");
+    });
+  });

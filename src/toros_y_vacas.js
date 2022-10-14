@@ -105,6 +105,25 @@ class ToroVaca{
         }
         return señal;
     }
+
+    esPrimo(n)
+    {
+        if (n<=1) 
+        {
+            return "";
+        }
+        for (var i = 2; i <= Math.sqrt(n); i++)
+        {
+            if (n % i == 0)
+            {
+                return "";
+            }
+             
+        }
+        
+        return "%";
+    }
+
     separarCodigo(codigo){
         let numString = String(codigo);
         const array = []    
