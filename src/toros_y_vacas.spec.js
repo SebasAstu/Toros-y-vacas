@@ -64,13 +64,13 @@ describe("guardar codigo secreto", () => {
     it("deberia devolver (!) si algun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
       const resultado = juego.verificarCodigo("20897");
-      expect(resultado).toEqual("!");
+      expect(resultado).toEqual("!#");
     });
 
     it("no deberia devolver (!) si si ningun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
       const resultado = juego.verificarCodigo("10789");
-      expect(resultado).toEqual("");
+      expect(resultado).toEqual("##");
     });
   });
 
@@ -84,12 +84,12 @@ describe("guardar codigo secreto", () => {
     it("deberia devolver (*) si algun digito coincide en con el codigo secreto pero no se enecuentra en la posicion correcta", () => {
       juego.guardarCodigoSecreto("23456");
       const resultado = juego.verificarCodigo("12897");
-      expect(resultado).toEqual("*");
+      expect(resultado).toEqual("#*#");
     });
     it("no deberia devolver (*) si si ningun digito coincide con el codigo secreto", () => {
       juego.guardarCodigoSecreto("23456");
       const resultado = juego.verificarCodigo("10789");
-      expect(resultado).toEqual("");
+      expect(resultado).toEqual("##");
     });
   });
 
@@ -175,3 +175,18 @@ describe("guardar codigo secreto", () => {
     });
 
   });
+
+  describe("Controlar ternera", () => {
+
+    let juego = new ToroVaca;
+
+    it("deberia devolver (#) si en el intento del segundo jugador difiere en 1 del primer jugador", () => {
+      juego.partida("12345","67890");
+      const resultado= juego.partida("12345","12346");
+      expect(resultado).toEqual("!!!!#");
+    });
+
+    
+  });
+
+  
