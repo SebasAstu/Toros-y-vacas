@@ -106,15 +106,15 @@ class ToroVaca{
         return señal;
     }
 
-    esPrimo(n)
+    esPrimo(numero)
     {
-        if (n<=1) 
+        if (numero<=1) 
         {
             return false;
         }
-        for (var i = 2; i <= Math.sqrt(n); i++)
+        for (var i = 2; i <= Math.sqrt(numero); i++)
         {
-            if (n % i == 0)
+            if (numero % i == 0)
             {
                 return false;
             }
@@ -127,12 +127,12 @@ class ToroVaca{
     buscarBisonte(codigoSecreto)
     {
         let señal="";
-        let primo=false;
+        let es_primo=false;
 
         for(var i = 0;i<codigoSecreto.length;i++){  
-           primo = this.esPrimo(Number.parseInt(codigoSecreto[i]))  
+           es_primo = this.esPrimo(Number.parseInt(codigoSecreto[i]))  
             
-            if(primo)
+            if(es_primo)
             {
                 señal += "%";
             }
