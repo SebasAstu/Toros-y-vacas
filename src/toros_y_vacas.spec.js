@@ -156,17 +156,22 @@ describe("guardar codigo secreto", () => {
     let juego = new ToroVaca;
 
     it("deberia devolver (%) si se envia un solo numero primo", () => {
-      const resultado= juego.esPrimo("3");
+      const resultado= juego.buscarBisonte("3");
       expect(resultado).toEqual("%");
     });
 
     it("deberia devolver (%)si en el codigo secreto enviado por el primer jugador existen numeros primos", () => {
       
-      expect(juego.esPrimo(1)).toEqual("");
-      expect(juego.esPrimo(2)).toEqual("%");
-      expect(juego.esPrimo(3)).toEqual("%");
-      expect(juego.esPrimo(4)).toEqual("");
-      expect(juego.esPrimo(5)).toEqual("%");
+      expect(juego.buscarBisonte("1")).toEqual("");
+      expect(juego.buscarBisonte("2")).toEqual("%");
+      expect(juego.buscarBisonte("3")).toEqual("%");
+      expect(juego.buscarBisonte("4")).toEqual("");
+      expect(juego.buscarBisonte("5")).toEqual("%");
     });
     
+    it("deberia devolver (%) de una lista de numeros(codigo secreto) dado por el primer jugador", () => {
+      const resultado= juego.buscarBisonte("2346");
+      expect(resultado).toEqual("%%");
+    });
+
   });

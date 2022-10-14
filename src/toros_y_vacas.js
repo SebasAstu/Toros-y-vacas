@@ -108,22 +108,37 @@ class ToroVaca{
 
     esPrimo(n)
     {
-
-        
         if (n<=1) 
         {
-            return "";
+            return false;
         }
         for (var i = 2; i <= Math.sqrt(n); i++)
         {
             if (n % i == 0)
             {
-                return "";
+                return false;
             }
              
         }
         
-        return "%";
+        return true;
+    }
+
+    buscarBisonte(codigoSecreto)
+    {
+        let señal="";
+        let primo=false;
+
+        for(var i = 0;i<codigoSecreto.length;i++){  
+           primo = this.esPrimo(Number.parseInt(codigoSecreto[i]))  
+            
+            if(primo)
+            {
+                señal += "%";
+            }
+            
+        }
+        return señal;
     }
 
     separarCodigo(codigo){
