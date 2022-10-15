@@ -97,7 +97,6 @@ class ToroVaca{
         return numero !== 1;
     }*/
     esPrimo(numero) {
-    
         for(let i = 2,raiz=Math.sqrt(numero); i <= raiz; i++)
             if(numero % i === 0) return false;
         return numero > 1;
@@ -108,9 +107,6 @@ class ToroVaca{
         for(var i = 0;i<codVec1.length;i++){
             if(this.esPrimo(codVec1[i])==true){
                 señal += "%";
-            }
-            if(this.esPrimo(codVec1[i])==false){
-                señal += "";
             }
         }
         return señal;
