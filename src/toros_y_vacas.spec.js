@@ -188,24 +188,34 @@ describe("guardar codigo secreto", () => {
     });
   });
 
-  describe("Devolver ! cuando el numero ingresado tiene digitos primos con el condigo secreto", () => {
+  describe("Devolver % cuando el numero ingresado tiene digitos primos con el condigo secreto", () => {
     let juego;
     beforeEach(()=> {
     juego = new ToroVaca
     });
-    it("deberia devolver (!)", () => {
-      juego.guardarCodigoSecreto("3");
+    it("deberia devolver (%)", () => {
+      juego.guardarCodigoSecreto("5");
       const resultado = juego.getBisonte("5");
-      expect(resultado).toEqual("!");
+      expect(resultado).toEqual("%");
     });
     it("deberia devolver ()", () => {
-      juego.guardarCodigoSecreto("3");
+      juego.guardarCodigoSecreto("4");
       const resultado = juego.getBisonte("4");
       expect(resultado).toEqual("");
     });
-    it("deberia devolver (!!)", () => {
-      juego.guardarCodigoSecreto("35");
+    it("deberia devolver (%%)", () => {
+      juego.guardarCodigoSecreto("57");
       const resultado = juego.getBisonte("57");
-      expect(resultado).toEqual("!!");
+      expect(resultado).toEqual("%%");
+    });
+    it("deberia devolver (%) cuando el cod secrero tiene 2 digitos y 1 es primo", () => {
+      juego.guardarCodigoSecreto("54");
+      const resultado = juego.getBisonte("54");
+      expect(resultado).toEqual("%");
+    });
+    it("retornar % implementado al verificar el codigo que adminte digitos de 4 a 6", () => {
+      juego.guardarCodigoSecreto("30989");
+      const resultado = juego.getBisonte("30989");
+      expect(resultado).toEqual("%");
     });
   });
