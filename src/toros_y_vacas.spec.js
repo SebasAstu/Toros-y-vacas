@@ -218,4 +218,9 @@ describe("guardar codigo secreto", () => {
       const resultado = juego.getBisonte("30989");
       expect(resultado).toEqual("%");
     });
+    it("retornar %%%% si el codigo que adminte digitos de 4 a 6", () => {
+      juego.guardarCodigoSecreto("3275");
+      const resultado = juego.getBisonte("3275");
+      expect(resultado).toEqual("%%%%");
+    });
   });
