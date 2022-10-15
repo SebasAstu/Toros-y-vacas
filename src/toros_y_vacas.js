@@ -81,10 +81,6 @@ class ToroVaca{
             {
                 señal += "#";
             }
-            else
-            {
-                señal += "";
-            }
         }
         return señal;
     }
